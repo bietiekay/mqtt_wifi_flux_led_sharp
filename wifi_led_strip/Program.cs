@@ -25,13 +25,13 @@ namespace wifi_led_strip
 		public static void Main(string[] args)
 		{
 
-			if (!File.Exists("wifi-led.json"))
+			if (!File.Exists("/configuration/wifi-led.json"))
 			{
 				Console.WriteLine("Error: Could not find wifi-led.json configuration file.");
 				return;
 			}
 
-			var ConfigReader = new StreamReader("wifi-led.json");
+			var ConfigReader = new StreamReader("/configuration/wifi-led.json");
 			Configuration = Config.ApplyJson(ConfigReader.ReadToEnd(), new ConfigObject());
 
 			LEDStatus = new Dictionary<string, bool>();
@@ -143,7 +143,7 @@ namespace wifi_led_strip
 				byte[] buffer = data.ToArray();
 				int result = _socket.Send(buffer, buffer.Length, SocketFlags.None);
 
-				Console.WriteLine($"SendPacket returned: {result}");
+				//Console.WriteLine($"SendPacket returned: {result}");
 			}
 			catch (Exception ex)
 			{

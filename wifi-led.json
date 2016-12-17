@@ -1,0 +1,7 @@
+﻿{
+  "wifi_led_mqtt": {
+    "mqtt_broker_ip": "192.168.178.92",
+    "mqtt_command_topic": "house/stappenbach/rgblight/#",
+    "mqtt_filter_topic": "house/stappenbach/rgblight/"
+  }
+}
